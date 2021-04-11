@@ -95,7 +95,7 @@ class FtpLogHookMelsecIQF(FtpLogHook):
         logging.info("files deleted from server                     :   " + str(files_deleted_from_server)) 
 
 
-class PostgreSqlDbLogHook(DbLogHook):
+class DbLogHookPostgreSql(DbLogHook):
     
     def import_log_files_from_local_folder_to_db(self):
         files_found_in_local_folder = len(os.listdir(self.local_folder))

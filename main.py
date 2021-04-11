@@ -2,7 +2,7 @@ import time
 import logging
 import os
 from lib.ftp_logger_to_database import FtpLogHookMelsecIQF
-from lib.ftp_logger_to_database import PostgreSqlDbLogHook
+from lib.ftp_logger_to_database import DbLogHookPostgreSql
 
 if __name__ == '__main__':
 
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     try:
         logging.info("Begin import fom local directory to database")
-        db = PostgreSqlDbLogHook(LOCAL_DIRECTORY, HOST, DBNAME, USER, PASSWORD, SCHEMA_NAME, TABLE_NAME)
+        db = DbLogHookPostgreSql(LOCAL_DIRECTORY, HOST, DBNAME, USER, PASSWORD, SCHEMA_NAME, TABLE_NAME)
         db.import_log_files_from_local_folder_to_db()
     except Exception as e:
         logging.error(e)
