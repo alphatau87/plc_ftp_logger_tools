@@ -4,8 +4,7 @@ import os
 from lib.ftp_logger_to_database import FtpLogHookMelsecIQF
 from lib.ftp_logger_to_database import DbLogHookPostgreSql
 
-if __name__ == '__main__':
-
+def main():
     logging.basicConfig(filename = os.getcwd() + '\\logs\\main.log', level=logging.INFO, format = '%(asctime)s:%(name)s:%(message)s')
 
     ## DATABASE constants
@@ -42,3 +41,7 @@ if __name__ == '__main__':
         logging.error(e)
 
     logging.info("Time spent                                    :   " + str(time.time()-start_time) + ' s')
+
+
+if __name__ == '__main__':
+    main()
